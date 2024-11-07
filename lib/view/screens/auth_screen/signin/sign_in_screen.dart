@@ -66,8 +66,8 @@ class SignInScreen extends StatelessWidget {
                         CustomTextField(
                           fieldHeading: AppString.password,
                           textEditingController:
-                              signinController.emailController.value,
-                          hintText: AppString.email,
+                              signinController.passController.value,
+                          hintText: AppString.password,
                           prefixIconPath: AppImage.lockLogo,
                           isPassword: true,
                           validator: (value) =>
@@ -119,7 +119,10 @@ class SignInScreen extends StatelessWidget {
               CustomBodyBtn(
                   title: AppString.signin,
                   ontap: () {
-                    if (formKey.currentState!.validate()) {}
+                    if (formKey.currentState!.validate()) {
+                      Get.toNamed(AppRoute.bottomNavScreen);
+                    }
+                    Get.toNamed(AppRoute.bottomNavScreen);
                   }),
               SizedBox(
                 height: 120.h,

@@ -6,6 +6,7 @@ import 'package:memorial/view/screens/auth_screen/forget_pass/reset_pass_screen.
 import 'package:memorial/view/screens/auth_screen/signin/sign_in_screen.dart';
 import 'package:memorial/view/screens/auth_screen/signup/signup_otp_verify_screen.dart';
 import 'package:memorial/view/screens/auth_screen/signup/signup_screen.dart';
+import 'package:memorial/view/screens/bottom_nav_screen/bottom_nav_screen.dart';
 import 'package:memorial/view/screens/splash_screen/onbording_screen.dart';
 import 'package:memorial/view/screens/splash_screen/splash_screen.dart';
 
@@ -22,6 +23,8 @@ class AppRoute {
   static const forgotPassScreen = "/forgotPassScreen";
   static const forgotOtpVerifyScreen = "/forgotOtpVerifyScreen";
   static const resetPassScreen = "/resetPassScreen";
+  //===============================================bottom nav screen
+  static const bottomNavScreen = "/bottomNavScreen";
 
   static List<GetPage> pages = [
     GetPage(
@@ -59,6 +62,10 @@ class AppRoute {
     GetPage(
         name: resetPassScreen,
         page: () => ResetPassScreen(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: bottomNavScreen,
+        page: () => BottomNavScreen(),
         transition: Transition.rightToLeftWithFade),
   ];
 }

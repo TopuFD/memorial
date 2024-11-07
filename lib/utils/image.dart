@@ -9,4 +9,6 @@ class AppImage {
   //=============================================svg logo
   static const emailLogo = "assets/svg/email.svg";
   static const lockLogo = "assets/svg/Lock.svg";
+  static const notification = "assets/svg/notification.svg";
+  static const storyCardLogo = "assets/svg/storyCardLogo.svg";
 }

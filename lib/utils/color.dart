@@ -12,6 +12,7 @@ class AppColor {
 
   //==================================================sky color
   static const Color skyColor = Color(0xFFC3E2FF);
+  static const Color skyDeep = Color(0xFF3598F1);
   //==================================================sky color
   static const Color blueColor = Color(0xFF013564);
 }

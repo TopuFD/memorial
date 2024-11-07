@@ -22,6 +22,8 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.skyColor,
+      extendBody: true,
+      resizeToAvoidBottomInset: true,
       body: pages[currentIndex],
       floatingActionButton: Container(
         height: 50.h,

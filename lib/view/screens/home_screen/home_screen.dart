@@ -92,7 +92,7 @@ class HomeScreen extends StatelessWidget {
                 child: TextFormField(
                   controller: homeController.searchController.value,
                   decoration: const InputDecoration(
-                      border: OutlineInputBorder(), hintText: "Search"),
+                      border: InputBorder.none, hintText: "Search"),
                 ),
               ),
               SizedBox(
@@ -156,6 +156,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
+  //=============================================================================custom catagory
   customCatagory(
       {String? title, double? weight, int? index, VoidCallback? ontap}) {
     return Obx(() {
@@ -176,15 +177,9 @@ class HomeScreen extends StatelessWidget {
                   ? AppColor.skyDeep
                   : AppColor.skyColor,
               borderRadius: BorderRadius.circular(12.r)),
-          child: Center(
-            child: Text(
-              textAlign: TextAlign.center,
-              title!,
-              style: CustomTextStyle.h3(fontSize: 14.sp),
-            ),
-          ),
         ),
       );
     });
   }
+  //==================================================================drawer
 }

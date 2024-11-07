@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:memorial/core/app_route.dart';
 import 'package:memorial/utils/image.dart';
 import 'package:memorial/utils/string.dart';
 import 'package:memorial/utils/text_style.dart';
@@ -36,14 +37,20 @@ class AuthScreen extends StatelessWidget {
               height: 20.h,
             ),
             //=========================================================sign in button
-            CustomBodyBtn(title: AppString.signin, ontap: () {}),
+            CustomBodyBtn(
+                title: AppString.signin,
+                ontap: () {
+                  Get.toNamed(AppRoute.signinScreen);
+                }),
             SizedBox(
               height: 20.h,
             ),
             //=========================================================sign in button
             CustomBodyBtn(
               title: AppString.signUp,
-              ontap: () {},
+              ontap: () {
+                Get.toNamed(AppRoute.signupScreen);
+              },
               isBorder: true,
             ),
           ],

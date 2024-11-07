@@ -8,5 +8,5 @@ class AppImage {
 
   //=============================================svg logo
   static const emailLogo = "assets/svg/email.svg";
-  static const lockLogo = "assets/svg/lock.svg";
+  static const lockLogo = "assets/svg/Lock.svg";
 }

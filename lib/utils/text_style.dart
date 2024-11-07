@@ -11,10 +11,10 @@ class CustomTextStyle {
     double? letterSpacing,
   }) {
     return TextStyle(
-      color: color ?? Colors.blue,
-      fontSize: fontSize ?? 25.sp,
+      color: color ?? AppColor.blueColor,
+      fontSize: fontSize ?? 26.sp,
       letterSpacing: letterSpacing,
-      fontWeight: fontWeight ?? FontWeight.bold,
+      fontWeight: fontWeight ?? FontWeight.w600,
     );
   }
 

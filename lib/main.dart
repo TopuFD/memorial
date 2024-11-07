@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:memorial/core/app_route.dart';
+import 'package:memorial/utils/color.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,18 +15,23 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+        const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return ScreenUtilInit(
       designSize: const Size(360, 690),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
         return GetMaterialApp(
+          debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
           theme: ThemeData(
+            scaffoldBackgroundColor: AppColor.skyColor,
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: true,
           ),
-          home: const MyHomePage(title: 'Flutter Demo Home Page'),
+          getPages: AppRoute.pages,
+          initialRoute: AppRoute.splashScreen,
         );
       },
     );

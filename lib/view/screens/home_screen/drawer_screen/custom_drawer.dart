@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:memorial/core/app_route.dart';
 import 'package:memorial/utils/image.dart';
 import 'package:memorial/utils/string.dart';
+import 'package:memorial/view/widgets/custom_dialog.dart';
 
 import '../../../../utils/color.dart';
 import '../../../../utils/text_style.dart';
@@ -85,7 +86,9 @@ class CustomDrawer extends StatelessWidget {
                 iconPath: AppImage.tutorial),
             //==============================================subscription button
             customDrawerItem(
-                ontap: () {},
+                ontap: () {
+                  Get.toNamed(AppRoute.subscriptionScreen);
+                },
                 title: AppString.subscriptions,
                 iconPath: AppImage.subscription),
             //==============================================settints
@@ -106,7 +109,9 @@ class CustomDrawer extends StatelessWidget {
                 iconPath: AppImage.about),
             //==============================================support  button
             customDrawerItem(
-                ontap: () {},
+                ontap: () {
+                  Get.toNamed(AppRoute.supportScreen);
+                },
                 title: AppString.support,
                 iconPath: AppImage.support),
             //==============================================privacy policy  button
@@ -126,9 +131,11 @@ class CustomDrawer extends StatelessWidget {
             SizedBox(
               height: 20.h,
             ),
-            //==============================================terms and conditions  button
+            //==============================================logout  button
             customDrawerItem(
-                ontap: () {},
+                ontap: () {
+                  CustomDialog().customDialog(context: context, isLogOut: true);
+                },
                 title: AppString.logOut,
                 iconPath: AppImage.logOut),
           ],
@@ -149,7 +156,7 @@ class CustomDrawer extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
           child: Row(
             children: [
-              SvgPicture.asset(AppImage.myStory),
+              SvgPicture.asset(iconPath!),
               SizedBox(
                 width: 10.w,
               ),

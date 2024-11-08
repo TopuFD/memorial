@@ -12,6 +12,8 @@ import 'package:memorial/view/screens/home_screen/story_details.dart';
 import 'package:memorial/view/screens/profile_screen/about_us_screen.dart';
 import 'package:memorial/view/screens/profile_screen/my_story_screen.dart';
 import 'package:memorial/view/screens/profile_screen/save_stroy_screen.dart';
+import 'package:memorial/view/screens/profile_screen/subscription_screen.dart';
+import 'package:memorial/view/screens/profile_screen/support_screen.dart';
 import 'package:memorial/view/screens/profile_screen/terms_condition_screen.dart';
 import 'package:memorial/view/screens/splash_screen/onbording_screen.dart';
 import 'package:memorial/view/screens/splash_screen/splash_screen.dart';
@@ -42,6 +44,8 @@ class AppRoute {
   static const aboutUsScreen = "/aboutUsScreen";
   static const privacyPolicyScreen = "/privacyPolicyScreen";
   static const termsConditionScreen = "/termsConditionScreen";
+  static const supportScreen = "/supportScreen";
+  static const subscriptionScreen = "/subscriptionScreen";
 
   static List<GetPage> pages = [
     GetPage(
@@ -107,6 +111,14 @@ class AppRoute {
     GetPage(
         name: termsConditionScreen,
         page: () => TermsConditionScreen(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: supportScreen,
+        page: () => SupportScreen(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: subscriptionScreen,
+        page: () => SubscriptionScreen(),
         transition: Transition.rightToLeftWithFade),
   ];
 }

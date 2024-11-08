@@ -5,6 +5,7 @@ class AppImage {
   static const onbordTwo = "assets/images/onbordTwo.png";
   static const onbordThree = "assets/images/onbordThree.png";
   static const authImage = "assets/images/authImage.png";
+  static const supportImage = "assets/images/suportImage.png";
 
   //=============================================svg logo
   static const emailLogo = "assets/svg/email.svg";
@@ -18,10 +19,13 @@ class AppImage {
   static const myStory = "assets/svg/myStory.svg";
   static const policy = "assets/svg/policy.svg";
   static const saveStory = "assets/svg/saveStory.svg";
-  static const settings = "assets/svg/settings.svg";
+  static const settings = "assets/svg/setting.svg";
   static const subscription = "assets/svg/subscription.svg";
   static const terms = "assets/svg/terms.svg";
   static const tutorial = "assets/svg/tutorial.svg";
   static const support = "assets/svg/support.svg";
   static const logOut = "assets/svg/logOut.svg";
+  static const call = "assets/svg/call.svg";
+  static const messege = "assets/svg/messege.svg";
+  static const select = "assets/svg/select.svg";
 }

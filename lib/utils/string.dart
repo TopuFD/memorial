@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:flutter/widgets.dart';
+
 class AppString {
   //=================================================for splash and onbording
   static const splashDoc =
@@ -77,4 +79,8 @@ With that, they turned and walked back, comforted by the thought that Grandpa Jo
   static const privacyPolicy = "Privacy Policy";
   static const termsCondition = "Terms and Conditions";
   static const logOut = "Log Out";
+  //======================================================================profile
+  static const logoutDialogTitle = "Do you want to Log Out yout Profile?";
+  static const deletStoryTitle = "Do you want to delete your account?";
+  static const deleteAccountTitle = "Do you want to delete your account?";
 }

@@ -111,7 +111,9 @@ class CustomDrawer extends StatelessWidget {
                 iconPath: AppImage.support),
             //==============================================privacy policy  button
             customDrawerItem(
-                ontap: () {},
+                ontap: () {
+                  Get.toNamed(AppRoute.privacyPolicyScreen);
+                },
                 title: AppString.privacyPolicy,
                 iconPath: AppImage.policy),
             //==============================================terms and conditions  button

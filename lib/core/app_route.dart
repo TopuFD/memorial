@@ -15,6 +15,8 @@ import 'package:memorial/view/screens/profile_screen/save_stroy_screen.dart';
 import 'package:memorial/view/screens/splash_screen/onbording_screen.dart';
 import 'package:memorial/view/screens/splash_screen/splash_screen.dart';
 
+import '../view/screens/profile_screen/privacy_policy_screen.dart';
+
 class AppRoute {
   //=====================================splash and onbording
   static const splashScreen = "/splashScreen";
@@ -37,6 +39,7 @@ class AppRoute {
   static const myStoryScreen = "/myStoryScreen";
   static const saveStoryScreen = "/saveStoryScreen";
   static const aboutUsScreen = "/aboutUsScreen";
+  static const privacyPolicyScreen = "/privacyPolicyScreen";
 
   static List<GetPage> pages = [
     GetPage(
@@ -94,6 +97,10 @@ class AppRoute {
     GetPage(
         name: aboutUsScreen,
         page: () => AboutUsScreen(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: privacyPolicyScreen,
+        page: () => PrivacyPolicyScreen(),
         transition: Transition.rightToLeftWithFade),
   ];
 }

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:memorial/controller/home_controller/home_controller.dart';
+import 'package:memorial/core/app_route.dart';
 import 'package:memorial/utils/color.dart';
 import 'package:memorial/utils/image.dart';
 import 'package:memorial/utils/text_style.dart';
@@ -147,7 +148,9 @@ class HomeScreen extends StatelessWidget {
                   physics: const NeverScrollableScrollPhysics(),
                   itemCount: 20,
                   itemBuilder: (context, index) {
-                    return const StoryCard();
+                    return StoryCard(
+                      ontap: () => Get.toNamed(AppRoute.storyDetailsScreen),
+                    );
                   })
             ],
           ),
@@ -177,6 +180,13 @@ class HomeScreen extends StatelessWidget {
                   ? AppColor.skyDeep
                   : AppColor.skyColor,
               borderRadius: BorderRadius.circular(12.r)),
+          child: Center(
+            child: Text(
+              title!,
+              textAlign: TextAlign.center,
+              style: CustomTextStyle.h3(fontSize: 15.sp),
+            ),
+          ),
         ),
       );
     });

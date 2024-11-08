@@ -21,7 +21,7 @@ class ForgotPassScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-          preferredSize: Size.fromHeight(60.h), child: const CustomAppbar()),
+          preferredSize: Size.fromHeight(60.h), child: CustomAppbar()),
       body: SizedBox(
         width: Get.width,
         child: Column(

@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
 
 class CustomNetworkImage extends StatelessWidget {
@@ -28,20 +29,51 @@ class CustomNetworkImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CachedNetworkImage(
         imageUrl: imageUrl,
-        imageBuilder: (context, imageProvider) => Container(
-              height: height,
-              width: width,
-              decoration: BoxDecoration(
-                border: border,
-                borderRadius: borderRadius,
-                shape: boxShape,
-                color: backgroundColor,
-                image: DecorationImage(
-                    image: imageProvider,
-                    fit: BoxFit.cover,
-                    colorFilter: colorFilter),
-              ),
-              child: child,
+        imageBuilder: (context, imageProvider) => Stack(
+              children: [
+                Container(
+                  height: height,
+                  width: width,
+                  decoration: BoxDecoration(
+                    border: border,
+                    borderRadius: borderRadius,
+                    shape: boxShape,
+                    color: backgroundColor,
+                    image: DecorationImage(
+                        image: imageProvider,
+                        fit: BoxFit.cover,
+                        colorFilter: colorFilter),
+                  ),
+                  child: child,
+                ),
+                Positioned(
+                    right: 10.w,
+                    top: 8.h,
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.message,
+                          size: 20.h,
+                          color: const Color(0xFF5C5F66),
+                        ),
+                        SizedBox(
+                          width: 5.w,
+                        ),
+                        Text(
+                          '4 Comments',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: const Color(0xFF5C5F66),
+                            fontSize: 16.sp,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w400,
+                            height: 0.10,
+                            letterSpacing: -0.03,
+                          ),
+                        ),
+                      ],
+                    ))
+              ],
             ),
         placeholder: (context, url) => Shimmer.fromColors(
             baseColor: Colors.grey.withOpacity(0.6),

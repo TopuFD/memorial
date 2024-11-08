@@ -2,25 +2,51 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:memorial/utils/color.dart';
+import 'package:memorial/utils/text_style.dart';
 
+// ignore: must_be_immutable
 class CustomAppbar extends StatelessWidget {
-  const CustomAppbar({super.key});
-
+  CustomAppbar({super.key, this.title});
+  String? title;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      child: Align(
-        alignment: Alignment.bottomLeft,
-        child: IconButton(
-            onPressed: () {
-              Get.back();
-            },
-            icon: Icon(
-              Icons.arrow_back,
-              size: 25.h,
-              color: AppColor.black,
-            )),
-      ),
+      child: (title == null || title!.isEmpty)
+          ? Align(
+              alignment: Alignment.bottomLeft,
+              child: IconButton(
+                  onPressed: () {
+                    Get.back();
+                  },
+                  icon: Icon(
+                    Icons.arrow_back,
+                    size: 25.h,
+                    color: AppColor.black,
+                  )),
+            )
+          : Padding(
+              padding: EdgeInsets.only(top: 30.h),
+              child: Row(
+                children: [
+                  IconButton(
+                      onPressed: () {
+                        Get.back();
+                      },
+                      icon: Icon(
+                        Icons.arrow_back,
+                        size: 25.h,
+                        color: AppColor.black,
+                      )),
+                  SizedBox(
+                    width: 25.w,
+                  ),
+                  Text(
+                    title!,
+                    style: CustomTextStyle.h3(fontWeight: FontWeight.w700),
+                  )
+                ],
+              ),
+            ),
     );
   }
 }

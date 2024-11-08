@@ -54,4 +54,14 @@ class AppString {
   static const dontHaveAccount = 'Don\'t heve account? ';
   static const enterResetPassEmail =
       'Enter your email address to reset your\npassword.';
+  static const desce =
+      """The sun was setting, casting a golden glow over the small town as the Anderson family made their way to the cemetery. It was a quiet walk, the only sounds being the crunch of gravel underfoot and the soft whisper of the wind through the trees. They were visiting the grave of Grandpa Joe, a beloved figure who had passed away a year ago.
+
+Mom carried a bouquet of Grandpa’s favorite flowers—sunflowers, bright and cheerful, just like he had been. Dad held little Emily’s hand, while Tommy, the eldest, walked a few steps ahead, his eyes focused on the path. There was a solemn silence among them, each lost in their own thoughts and memories of Grandpa Joe.
+
+As they reached the grave, Mom knelt down and placed the flowers gently on the stone. Dad wrapped his arm around her, pulling her close as she wiped away a tear. Tommy stood silently, his hands in his pockets, while Emily looked up at the sky, as if searching for Grandpa Joe among the stars.
+
+They stood there for a long moment, the weight of their loss hanging in the air. Finally, Dad spoke, his voice steady but filled with emotion. "He’s always with us," he said, squeezing Emily's hand. "In our hearts, he never really left."
+
+With that, they turned and walked back, comforted by the thought that Grandpa Joe’s memory would always be a part of them.""";
 }

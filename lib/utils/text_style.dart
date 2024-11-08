@@ -47,4 +47,19 @@ class CustomTextStyle {
       fontWeight: fontWeight ?? FontWeight.w400,
     );
   }
+
+  //==============================================heading two
+  static TextStyle h4({
+    Color? color,
+    FontWeight? fontWeight,
+    double? fontSize,
+    double? letterSpacing,
+  }) {
+    return TextStyle(
+      color: color ?? AppColor.blackDoc,
+      fontSize: fontSize ?? 18.sp,
+      letterSpacing: letterSpacing,
+      fontWeight: fontWeight ?? FontWeight.w600,
+    );
+  }
 }

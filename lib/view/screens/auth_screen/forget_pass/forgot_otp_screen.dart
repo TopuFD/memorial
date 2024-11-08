@@ -22,7 +22,7 @@ class ForgotOtpVerifyScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-          preferredSize: Size.fromHeight(60.h), child: const CustomAppbar()),
+          preferredSize: Size.fromHeight(60.h), child: CustomAppbar()),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: Get.width * .05),
         child: Column(

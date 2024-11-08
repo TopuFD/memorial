@@ -82,7 +82,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         padding: EdgeInsets.only(bottom: 10.h),
         child: Column(
           children: [
-            widget.fieldHeading!.isEmpty
+            (widget.fieldHeading == null || widget.fieldHeading!.isEmpty)
                 ? const SizedBox()
                 : Align(
                     alignment: Alignment.topLeft,

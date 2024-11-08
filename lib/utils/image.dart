@@ -11,4 +11,7 @@ class AppImage {
   static const lockLogo = "assets/svg/Lock.svg";
   static const notification = "assets/svg/notification.svg";
   static const storyCardLogo = "assets/svg/storyCardLogo.svg";
+  static const music = "assets/svg/music.svg";
+  static const date = "assets/svg/date.svg";
+  static const person = "assets/svg/person.svg";
 }

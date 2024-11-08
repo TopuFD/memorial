@@ -9,6 +9,7 @@ import 'package:memorial/view/screens/auth_screen/signup/signup_otp_verify_scree
 import 'package:memorial/view/screens/auth_screen/signup/signup_screen.dart';
 import 'package:memorial/view/screens/bottom_nav_screen/bottom_nav_screen.dart';
 import 'package:memorial/view/screens/home_screen/story_details.dart';
+import 'package:memorial/view/screens/profile_screen/about_us_screen.dart';
 import 'package:memorial/view/screens/profile_screen/my_story_screen.dart';
 import 'package:memorial/view/screens/profile_screen/save_stroy_screen.dart';
 import 'package:memorial/view/screens/splash_screen/onbording_screen.dart';
@@ -35,6 +36,7 @@ class AppRoute {
   //===================================================ProfileScreen
   static const myStoryScreen = "/myStoryScreen";
   static const saveStoryScreen = "/saveStoryScreen";
+  static const aboutUsScreen = "/aboutUsScreen";
 
   static List<GetPage> pages = [
     GetPage(
@@ -88,6 +90,10 @@ class AppRoute {
     GetPage(
         name: saveStoryScreen,
         page: () => SaveStroyScreen(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: aboutUsScreen,
+        page: () => AboutUsScreen(),
         transition: Transition.rightToLeftWithFade),
   ];
 }

@@ -99,7 +99,9 @@ class CustomDrawer extends StatelessWidget {
             ),
             //==============================================about  button
             customDrawerItem(
-                ontap: () {},
+                ontap: () {
+                  Get.toNamed(AppRoute.aboutUsScreen);
+                },
                 title: AppString.aboutUs,
                 iconPath: AppImage.about),
             //==============================================support  button

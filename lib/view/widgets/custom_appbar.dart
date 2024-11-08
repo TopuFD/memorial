@@ -11,42 +11,36 @@ class CustomAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      child: (title == null || title!.isEmpty)
-          ? Align(
-              alignment: Alignment.bottomLeft,
-              child: IconButton(
-                  onPressed: () {
-                    Get.back();
-                  },
-                  icon: Icon(
-                    Icons.arrow_back,
-                    size: 25.h,
-                    color: AppColor.black,
-                  )),
-            )
-          : Padding(
-              padding: EdgeInsets.only(top: 30.h),
-              child: Row(
-                children: [
-                  IconButton(
-                      onPressed: () {
-                        Get.back();
-                      },
-                      icon: Icon(
-                        Icons.arrow_back,
-                        size: 25.h,
-                        color: AppColor.black,
-                      )),
-                  SizedBox(
-                    width: 25.w,
-                  ),
-                  Text(
-                    title!,
-                    style: CustomTextStyle.h3(fontWeight: FontWeight.w700),
-                  )
-                ],
-              ),
-            ),
-    );
+        child: (title == null || title!.isEmpty)
+            ? Align(
+                alignment: Alignment.bottomLeft,
+                child: IconButton(
+                    onPressed: () {
+                      Get.back();
+                    },
+                    icon: Icon(
+                      Icons.arrow_back,
+                      size: 25.h,
+                      color: AppColor.black,
+                    )),
+              )
+            : AppBar(
+                surfaceTintColor: Colors.transparent,
+                backgroundColor: AppColor.skyColor,
+                leading: IconButton(
+                    onPressed: () {
+                      Get.back();
+                    },
+                    icon: Icon(
+                      Icons.arrow_back,
+                      size: 25.h,
+                      color: AppColor.black,
+                    )),
+                centerTitle: true,
+                title: Text(
+                  title!,
+                  style: CustomTextStyle.h3(fontWeight: FontWeight.w700),
+                ),
+              ));
   }
 }

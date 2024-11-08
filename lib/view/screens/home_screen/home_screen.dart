@@ -7,6 +7,7 @@ import 'package:memorial/core/app_route.dart';
 import 'package:memorial/utils/color.dart';
 import 'package:memorial/utils/image.dart';
 import 'package:memorial/utils/text_style.dart';
+import 'package:memorial/view/screens/home_screen/drawer_screen/custom_drawer.dart';
 import 'package:memorial/view/widgets/cutom_network_image.dart';
 import 'package:memorial/view/widgets/story_card.dart';
 
@@ -19,7 +20,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColor.skyColor,
       extendBody: true,
-      drawer: const Drawer(),
+      drawer: CustomDrawer(),
       appBar: AppBar(
         surfaceTintColor: Colors.transparent,
         backgroundColor: AppColor.skyColor,
@@ -167,7 +168,7 @@ class HomeScreen extends StatelessWidget {
         onTap: ontap,
         child: AnimatedContainer(
           margin: EdgeInsets.only(right: 8.w),
-          duration: const Duration(milliseconds: 400),
+          duration: const Duration(milliseconds: 500),
           height: 56.h,
           width: weight,
           decoration: BoxDecoration(

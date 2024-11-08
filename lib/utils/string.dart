@@ -54,6 +54,7 @@ class AppString {
   static const dontHaveAccount = 'Don\'t heve account? ';
   static const enterResetPassEmail =
       'Enter your email address to reset your\npassword.';
+  //===========================================================================home
   static const desce =
       """The sun was setting, casting a golden glow over the small town as the Anderson family made their way to the cemetery. It was a quiet walk, the only sounds being the crunch of gravel underfoot and the soft whisper of the wind through the trees. They were visiting the grave of Grandpa Joe, a beloved figure who had passed away a year ago.
 
@@ -64,4 +65,16 @@ As they reached the grave, Mom knelt down and placed the flowers gently on the s
 They stood there for a long moment, the weight of their loss hanging in the air. Finally, Dad spoke, his voice steady but filled with emotion. "He’s always with us," he said, squeezing Emily's hand. "In our hearts, he never really left."
 
 With that, they turned and walked back, comforted by the thought that Grandpa Joe’s memory would always be a part of them.""";
+
+//===================================================================drawer
+  static const myStory = "My Story";
+  static const savedStories = "Saved Stories";
+  static const tutorialForApp = "Tutorial for using App";
+  static const subscriptions = "Subscriptions";
+  static const settings = "Settings";
+  static const aboutUs = "About Us";
+  static const support = "Support";
+  static const privacyPolicy = "Privacy Policy";
+  static const termsCondition = "Terms and Conditions";
+  static const logOut = "Log Out";
 }

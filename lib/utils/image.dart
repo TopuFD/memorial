@@ -14,4 +14,14 @@ class AppImage {
   static const music = "assets/svg/music.svg";
   static const date = "assets/svg/date.svg";
   static const person = "assets/svg/person.svg";
+  static const about = "assets/svg/about.svg";
+  static const myStory = "assets/svg/myStory.svg";
+  static const policy = "assets/svg/policy.svg";
+  static const saveStory = "assets/svg/saveStory.svg";
+  static const settings = "assets/svg/settings.svg";
+  static const subscription = "assets/svg/subscription.svg";
+  static const terms = "assets/svg/terms.svg";
+  static const tutorial = "assets/svg/tutorial.svg";
+  static const support = "assets/svg/support.svg";
+  static const logOut = "assets/svg/logOut.svg";
 }

@@ -46,7 +46,7 @@ class StoryDetailsScreen extends StatelessWidget {
                           clipBehavior: Clip.none,
                           width: 360.w,
                           decoration: BoxDecoration(
-                              color: Color(0xFFAAD5FF),
+                              color: const Color(0xFFAAD5FF),
                               borderRadius: BorderRadius.circular(22.r)),
                           child: Padding(
                             padding: EdgeInsets.symmetric(
@@ -124,7 +124,8 @@ class StoryDetailsScreen extends StatelessWidget {
                                 Obx(() {
                                   return ListView.builder(
                                       shrinkWrap: true,
-                                      physics: NeverScrollableScrollPhysics(),
+                                      physics:
+                                          const NeverScrollableScrollPhysics(),
                                       itemCount:
                                           homeController.commentList.length,
                                       itemBuilder: (context, index) {
@@ -154,7 +155,7 @@ class StoryDetailsScreen extends StatelessWidget {
                     height: 60.h,
                     width: 60.w,
                     clipBehavior: Clip.antiAlias,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         color: Colors.blue, shape: BoxShape.circle),
                     child: CustomNetworkImage(
                         imageUrl:
@@ -182,7 +183,7 @@ class StoryDetailsScreen extends StatelessWidget {
                             child: Form(
                                 child: TextFormField(
                               controller: homeController.comentController.value,
-                              decoration: InputDecoration(
+                              decoration: const InputDecoration(
                                 hintText: "add a comment",
                                 border: InputBorder.none,
                               ),
@@ -197,11 +198,11 @@ class StoryDetailsScreen extends StatelessWidget {
                               homeController.comentController.value.clear();
                             },
                             child: AnimatedContainer(
-                              duration: Duration(seconds: 1),
+                              duration: const Duration(seconds: 1),
                               width: 82.w,
                               height: 32.h,
                               decoration: BoxDecoration(
-                                  color: Color(0xFF037EEE),
+                                  color: const Color(0xFF037EEE),
                                   borderRadius: BorderRadius.circular(32.r)),
                               child: Center(
                                 child: Text(
@@ -239,7 +240,7 @@ class StoryDetailsScreen extends StatelessWidget {
             width: 60.w,
             clipBehavior: Clip.antiAlias,
             decoration:
-                BoxDecoration(color: Colors.blue, shape: BoxShape.circle),
+                const BoxDecoration(color: Colors.blue, shape: BoxShape.circle),
             child: CustomNetworkImage(
                 imageUrl:
                     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrWpVvB18in1MoQB6z7Tv4XSOEEbqfNrHtTg&s",
@@ -253,9 +254,9 @@ class StoryDetailsScreen extends StatelessWidget {
             width: 250.w,
             height: 100.h,
             padding: EdgeInsets.symmetric(horizontal: 10.w),
-            duration: Duration(seconds: 2),
+            duration: const Duration(seconds: 2),
             decoration: BoxDecoration(
-                color: Color(0xFF8BC4F7),
+                color: const Color(0xFF8BC4F7),
                 borderRadius: BorderRadius.circular(10.r)),
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 8.h),

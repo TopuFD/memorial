@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:memorial/view/profile_screen/profile_screen.dart';
 import 'package:memorial/view/screens/auth_screen/auth_screen.dart';
 import 'package:memorial/view/screens/auth_screen/forget_pass/forgot_otp_screen.dart';
 import 'package:memorial/view/screens/auth_screen/forget_pass/forgot_pass_screen.dart';
@@ -8,6 +9,8 @@ import 'package:memorial/view/screens/auth_screen/signup/signup_otp_verify_scree
 import 'package:memorial/view/screens/auth_screen/signup/signup_screen.dart';
 import 'package:memorial/view/screens/bottom_nav_screen/bottom_nav_screen.dart';
 import 'package:memorial/view/screens/home_screen/story_details.dart';
+import 'package:memorial/view/screens/profile_screen/my_story_screen.dart';
+import 'package:memorial/view/screens/profile_screen/save_stroy_screen.dart';
 import 'package:memorial/view/screens/splash_screen/onbording_screen.dart';
 import 'package:memorial/view/screens/splash_screen/splash_screen.dart';
 
@@ -28,6 +31,10 @@ class AppRoute {
   static const bottomNavScreen = "/bottomNavScreen";
   //===============================================home screen
   static const storyDetailsScreen = "/storyDetailsScreen";
+
+  //===================================================ProfileScreen
+  static const myStoryScreen = "/myStoryScreen";
+  static const saveStoryScreen = "/saveStoryScreen";
 
   static List<GetPage> pages = [
     GetPage(
@@ -73,6 +80,14 @@ class AppRoute {
     GetPage(
         name: storyDetailsScreen,
         page: () => StoryDetailsScreen(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: myStoryScreen,
+        page: () => MyStoryScreen(),
+        transition: Transition.rightToLeftWithFade),
+    GetPage(
+        name: saveStoryScreen,
+        page: () => SaveStroyScreen(),
         transition: Transition.rightToLeftWithFade),
   ];
 }

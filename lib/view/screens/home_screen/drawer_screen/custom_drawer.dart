@@ -118,7 +118,11 @@ class CustomDrawer extends StatelessWidget {
                 iconPath: AppImage.policy),
             //==============================================terms and conditions  button
             customDrawerItem(
-                ontap: () {}, title: AppString.terms, iconPath: AppImage.terms),
+                ontap: () {
+                  Get.toNamed(AppRoute.termsConditionScreen);
+                },
+                title: AppString.terms,
+                iconPath: AppImage.terms),
             SizedBox(
               height: 20.h,
             ),

@@ -7,6 +7,7 @@ import 'package:memorial/utils/color.dart';
 import 'package:memorial/utils/image.dart';
 import 'package:memorial/view/widgets/cutom_network_image.dart';
 
+// ignore: must_be_immutable
 class StoryCard extends StatefulWidget {
   StoryCard({super.key, required this.ontap});
 

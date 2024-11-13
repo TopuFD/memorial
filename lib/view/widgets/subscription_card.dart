@@ -9,7 +9,7 @@ import 'package:memorial/utils/text_style.dart';
 import 'package:memorial/view/widgets/custom_body_btn.dart';
 
 class SubscriptionCard extends StatelessWidget {
-  SubscriptionCard(
+  const SubscriptionCard(
       {super.key,
       required this.cardType,
       required this.pageType,

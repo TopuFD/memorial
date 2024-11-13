@@ -6,7 +6,7 @@ import 'package:memorial/view/profile_screen/profile_screen.dart';
 import 'package:memorial/view/screens/home_screen/home_screen.dart';
 
 class BottomNavScreen extends StatefulWidget {
-  BottomNavScreen({super.key});
+  const BottomNavScreen({super.key});
 
   @override
   State<BottomNavScreen> createState() => _BottomNavScreenState();
@@ -16,7 +16,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
   List<IconData> iconList = [Icons.home, Icons.person];
 
   int currentIndex = 0;
-  List pages = [HomeScreen(), ProfileScreen()];
+  List pages = [HomeScreen(), const ProfileScreen()];
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,8 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
       floatingActionButton: Container(
         height: 50.h,
         width: 50.w,
-        decoration: BoxDecoration(color: Colors.blue, shape: BoxShape.circle),
+        decoration:
+            const BoxDecoration(color: Colors.blue, shape: BoxShape.circle),
         child: Center(
           child: Icon(
             Icons.add,

@@ -113,7 +113,7 @@ class MyStoryScreen extends StatelessWidget {
       return InkWell(
         onTap: ontap,
         child: AnimatedContainer(
-          duration: Duration(milliseconds: 450),
+          duration: const Duration(milliseconds: 450),
           width: 110.w,
           height: 42.h,
           decoration: BoxDecoration(

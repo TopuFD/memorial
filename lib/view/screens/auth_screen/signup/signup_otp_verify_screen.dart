@@ -17,7 +17,6 @@ class SignupOtpVerifyScreen extends StatelessWidget {
   final SignUpController signUpController = Get.find<SignUpController>();
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(60.h), child: CustomAppbar()),
@@ -104,7 +103,7 @@ class SignupOtpVerifyScreen extends StatelessWidget {
                   style: CustomTextStyle.h3(
                       color: AppColor.blueColor, fontSize: 15.sp)),
             ])),
-            Expanded(
+            const Expanded(
               child: SizedBox(),
             ),
             //=========================================================confirm button here

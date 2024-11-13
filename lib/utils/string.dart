@@ -1,7 +1,3 @@
-import 'dart:convert';
-
-import 'package:flutter/widgets.dart';
-
 class AppString {
   //=================================================for splash and onbording
   static const splashDoc =
@@ -84,4 +80,10 @@ With that, they turned and walked back, comforted by the thought that Grandpa Jo
   static const deletStoryTitle = "Do you want to delete your account?";
   static const deleteAccountTitle = "Do you want to delete your account?";
   static const youDontHavePackage = "You don't have any chosen package";
+  //======================================================================settings
+  static const deleteAccount = "Delete Account";
+  static const changePass = "Change Password";
+  static const currentPass = "Current Password";
+  static const confirmPass = "Confirm Password";
+  static const submit = "Submit";
 }

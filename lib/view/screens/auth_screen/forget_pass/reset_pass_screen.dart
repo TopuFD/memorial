@@ -1,10 +1,7 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:memorial/controller/auth_controller/forgot_pass_controller.dart';
-import 'package:memorial/controller/auth_controller/signin_controller.dart';
-import 'package:memorial/core/app_route.dart';
 import 'package:memorial/helpers/other_helper.dart';
 import 'package:memorial/utils/color.dart';
 import 'package:memorial/utils/image.dart';

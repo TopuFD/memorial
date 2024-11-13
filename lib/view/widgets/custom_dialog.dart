@@ -16,7 +16,7 @@ class CustomDialog {
       context: context,
       barrierDismissible: false,
       barrierColor: Colors.black.withOpacity(.8),
-      transitionDuration: const Duration(seconds: 1),
+      transitionDuration: const Duration(milliseconds: 550),
       pageBuilder: (context, animation, secondaryAnimation) {
         return Align(
           alignment: Alignment.bottomCenter,

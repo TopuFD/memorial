@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:memorial/view/profile_screen/profile_screen.dart';
+import 'package:memorial/view/screens/settings_screen/change_pass_screen.dart';
 import 'package:memorial/view/screens/auth_screen/auth_screen.dart';
 import 'package:memorial/view/screens/auth_screen/forget_pass/forgot_otp_screen.dart';
 import 'package:memorial/view/screens/auth_screen/forget_pass/forgot_pass_screen.dart';
@@ -16,6 +16,7 @@ import 'package:memorial/view/screens/profile_screen/save_stroy_screen.dart';
 import 'package:memorial/view/screens/profile_screen/subscription_screen.dart';
 import 'package:memorial/view/screens/profile_screen/support_screen.dart';
 import 'package:memorial/view/screens/profile_screen/terms_condition_screen.dart';
+import 'package:memorial/view/screens/settings_screen/settings_screen.dart';
 import 'package:memorial/view/screens/splash_screen/onbording_screen.dart';
 import 'package:memorial/view/screens/splash_screen/splash_screen.dart';
 
@@ -47,115 +48,130 @@ class AppRoute {
   static const termsConditionScreen = "/termsConditionScreen";
   static const supportScreen = "/supportScreen";
   static const subscriptionScreen = "/subscriptionScreen";
+  //===================================================settings screen
+  static const settingScreen = "/settingScreen";
+  static const changePassScreen = "/changePassScreen";
 
   static List<GetPage> pages = [
     GetPage(
         name: splashScreen,
         page: () => const SplashScreen(),
         transition: Transition.rightToLeftWithFade,
-        transitionDuration: const Duration(milliseconds: 500),
-        curve: Curves.easeIn),
+        transitionDuration: const Duration(milliseconds: 350),
+        curve: Curves.ease),
     GetPage(
         name: onbordingScreen,
         page: () => const OnbordingScreen(),
         transition: Transition.rightToLeftWithFade,
-        transitionDuration: const Duration(milliseconds: 500),
-        curve: Curves.easeIn),
+        transitionDuration: const Duration(milliseconds: 350),
+        curve: Curves.ease),
     GetPage(
         name: authScreen,
         page: () => const AuthScreen(),
         transition: Transition.rightToLeftWithFade,
-        transitionDuration: const Duration(milliseconds: 500),
-        curve: Curves.easeIn),
+        transitionDuration: const Duration(milliseconds: 350),
+        curve: Curves.ease),
     GetPage(
         name: signinScreen,
         page: () => SignInScreen(),
         transition: Transition.rightToLeftWithFade,
-        transitionDuration: const Duration(milliseconds: 500),
-        curve: Curves.easeIn),
+        transitionDuration: const Duration(milliseconds: 350),
+        curve: Curves.ease),
     GetPage(
         name: signupScreen,
         page: () => SignupScreen(),
         transition: Transition.rightToLeftWithFade,
-        transitionDuration: const Duration(milliseconds: 500),
-        curve: Curves.easeIn),
+        transitionDuration: const Duration(milliseconds: 350),
+        curve: Curves.ease),
     GetPage(
         name: signupOtpVerifyScreen,
         page: () => SignupOtpVerifyScreen(),
         transition: Transition.rightToLeftWithFade,
-        transitionDuration: const Duration(milliseconds: 500),
-        curve: Curves.easeIn),
+        transitionDuration: const Duration(milliseconds: 350),
+        curve: Curves.ease),
     GetPage(
         name: forgotPassScreen,
         page: () => ForgotPassScreen(),
         transition: Transition.rightToLeftWithFade,
-        transitionDuration: const Duration(milliseconds: 500),
-        curve: Curves.easeIn),
+        transitionDuration: const Duration(milliseconds: 350),
+        curve: Curves.ease),
     GetPage(
         name: forgotOtpVerifyScreen,
         page: () => ForgotOtpVerifyScreen(),
         transition: Transition.rightToLeftWithFade,
-        transitionDuration: const Duration(milliseconds: 500),
-        curve: Curves.easeIn),
+        transitionDuration: const Duration(milliseconds: 350),
+        curve: Curves.ease),
     GetPage(
         name: resetPassScreen,
         page: () => ResetPassScreen(),
         transition: Transition.rightToLeftWithFade,
-        transitionDuration: const Duration(milliseconds: 500),
-        curve: Curves.easeIn),
+        transitionDuration: const Duration(milliseconds: 350),
+        curve: Curves.ease),
     GetPage(
         name: bottomNavScreen,
-        page: () => BottomNavScreen(),
+        page: () => const BottomNavScreen(),
         transition: Transition.rightToLeftWithFade,
-        transitionDuration: const Duration(milliseconds: 500),
-        curve: Curves.easeIn),
+        transitionDuration: const Duration(milliseconds: 350),
+        curve: Curves.ease),
     GetPage(
         name: storyDetailsScreen,
         page: () => StoryDetailsScreen(),
         transition: Transition.rightToLeftWithFade,
-        transitionDuration: const Duration(milliseconds: 500),
-        curve: Curves.easeIn),
+        transitionDuration: const Duration(milliseconds: 350),
+        curve: Curves.ease),
     GetPage(
         name: myStoryScreen,
         page: () => MyStoryScreen(),
         transition: Transition.rightToLeftWithFade,
-        transitionDuration: const Duration(milliseconds: 500),
-        curve: Curves.easeIn),
+        transitionDuration: const Duration(milliseconds: 350),
+        curve: Curves.ease),
     GetPage(
         name: saveStoryScreen,
         page: () => const SaveStroyScreen(),
         transition: Transition.rightToLeftWithFade,
-        transitionDuration: const Duration(milliseconds: 500),
-        curve: Curves.easeIn),
+        transitionDuration: const Duration(milliseconds: 350),
+        curve: Curves.ease),
     GetPage(
         name: aboutUsScreen,
         page: () => const AboutUsScreen(),
         transition: Transition.rightToLeftWithFade,
-        transitionDuration: const Duration(milliseconds: 500),
-        curve: Curves.easeIn),
+        transitionDuration: const Duration(milliseconds: 350),
+        curve: Curves.ease),
     GetPage(
         name: privacyPolicyScreen,
         page: () => const PrivacyPolicyScreen(),
         transition: Transition.rightToLeftWithFade,
-        transitionDuration: const Duration(milliseconds: 500),
-        curve: Curves.easeIn),
+        transitionDuration: const Duration(milliseconds: 350),
+        curve: Curves.ease),
     GetPage(
         name: termsConditionScreen,
         page: () => const TermsConditionScreen(),
         transition: Transition.rightToLeftWithFade,
-        transitionDuration: const Duration(milliseconds: 500),
-        curve: Curves.easeIn),
+        transitionDuration: const Duration(milliseconds: 350),
+        curve: Curves.ease),
     GetPage(
         name: supportScreen,
         page: () => const SupportScreen(),
         transition: Transition.rightToLeftWithFade,
-        transitionDuration: const Duration(milliseconds: 500),
-        curve: Curves.easeIn),
+        transitionDuration: const Duration(milliseconds: 350),
+        curve: Curves.ease),
     GetPage(
         name: subscriptionScreen,
         page: () => SubscriptionScreen(),
         transition: Transition.rightToLeftWithFade,
-        transitionDuration: const Duration(milliseconds: 500),
-        curve: Curves.easeIn),
+        transitionDuration: const Duration(milliseconds: 350),
+        curve: Curves.ease),
+    GetPage(
+        name: settingScreen,
+        page: () => const SettingsScreen(),
+        transition: Transition.rightToLeftWithFade,
+        transitionDuration: const Duration(milliseconds: 350),
+        curve: Curves.ease),
+    GetPage(
+        name: changePassScreen,
+        page: () => ChangePassScreen(),
+        transition: Transition.rightToLeftWithFade,
+        transitionDuration: const Duration(milliseconds: 350),
+        curve: Curves.ease),
   ];
 }

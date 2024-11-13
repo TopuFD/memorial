@@ -94,7 +94,9 @@ class CustomDrawer extends StatelessWidget {
             //==============================================settints
             // button
             customDrawerItem(
-                ontap: () {},
+                ontap: () {
+                  Get.toNamed(AppRoute.settingScreen);
+                },
                 title: AppString.settings,
                 iconPath: AppImage.settings),
             SizedBox(

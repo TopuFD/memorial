@@ -147,7 +147,7 @@ class HomeScreen extends StatelessWidget {
               ListView.builder(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
-                  itemCount: 20,
+                  itemCount: 2,
                   itemBuilder: (context, index) {
                     return StoryCard(
                       ontap: () => Get.toNamed(AppRoute.storyDetailsScreen),

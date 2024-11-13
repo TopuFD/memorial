@@ -22,7 +22,7 @@ class CustomBodyBtn extends StatelessWidget {
       child: Container(
         width: 353.w,
         height: 52.h,
-        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+        // padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
         decoration: BoxDecoration(
             color: isBorder == true ? Colors.transparent : AppColor.blueColor,
             borderRadius: BorderRadius.circular(16.r),

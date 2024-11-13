@@ -9,6 +9,7 @@ class ProfileController extends GetxController {
   //=======================================subscription screen
   RxInt isPackge = 0.obs;
   RxInt sliderCardIndex = 0.obs;
+  //===================================================all package list
   List<Widget>? subscriptionList = [
     SubscriptionCard(
         cardType: "Basic",
@@ -32,4 +33,8 @@ class ProfileController extends GetxController {
         imageCount: 2,
         activeTime: "Active 1 year"),
   ];
+
+  RxList mySubscriptionList = [].obs;
+
+  static ProfileController get instance => Get.put(ProfileController());
 }

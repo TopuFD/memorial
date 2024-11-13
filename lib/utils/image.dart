@@ -6,6 +6,7 @@ class AppImage {
   static const onbordThree = "assets/images/onbordThree.png";
   static const authImage = "assets/images/authImage.png";
   static const supportImage = "assets/images/suportImage.png";
+  static const myPackage = "assets/images/myPackage.png";
 
   //=============================================svg logo
   static const emailLogo = "assets/svg/email.svg";

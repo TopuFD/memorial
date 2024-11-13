@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:memorial/controller/profile_controller/profile_controller.dart';
 import 'package:memorial/utils/color.dart';
 import 'package:memorial/utils/image.dart';
 import 'package:memorial/utils/text_style.dart';
@@ -26,8 +27,10 @@ class SubscriptionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
-      width: 305.w,
-      height: 487.h,
+      width: 350.w,
+      height: 450.h,
+      margin: EdgeInsets.symmetric(horizontal: 10.w),
+      padding: EdgeInsets.symmetric(horizontal: 10.w),
       decoration: BoxDecoration(
           color: AppColor.white,
           borderRadius: BorderRadius.circular(16.r),
@@ -45,6 +48,9 @@ class SubscriptionCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            SizedBox(
+              height: 10.h,
+            ),
             Text(cardType, style: CustomTextStyle.h4(fontSize: 26.sp)),
             SizedBox(
               height: 10.h,
@@ -72,12 +78,15 @@ class SubscriptionCard extends StatelessWidget {
             cardFeture(title: activeTime),
             cardFeture(title: "Consist of $consistWord words"),
             SizedBox(
-              height: 20.h,
+              height: 10.h,
             ),
-            SizedBox(
-              width: 257.w,
-              child: CustomBodyBtn(title: "Pay Now", ontap: () {}),
-            )
+            CustomBodyBtn(
+                title: "Pay Now",
+                ontap: () {
+                  ProfileController.instance.mySubscriptionList.add(
+                      ProfileController.instance.subscriptionList![
+                          ProfileController.instance.sliderCardIndex.value]);
+                }),
           ],
         ),
       ),

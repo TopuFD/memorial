@@ -190,7 +190,7 @@ class _StoryCardState extends State<StoryCard> {
     return Padding(
       padding: const EdgeInsets.only(right: 5),
       child: AnimatedContainer(
-        duration: Duration(milliseconds: 300),
+        duration: const Duration(milliseconds: 300),
         height: 14.h,
         width: 14.w,
         decoration: BoxDecoration(

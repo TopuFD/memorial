@@ -6,6 +6,12 @@ class ProfileController extends GetxController {
   //=======================================for my story screen
   RxInt catagoryIndex = 0.obs;
 
+  //=======================================edit profile screen
+  Rx<TextEditingController> nameController = TextEditingController().obs;
+  Rx<TextEditingController> emailController = TextEditingController().obs;
+  Rx<TextEditingController> phoneController = TextEditingController().obs;
+  Rx<TextEditingController> countryController = TextEditingController().obs;
+  Rx<TextEditingController> addressController = TextEditingController().obs;
   //=======================================subscription screen
   RxInt isPackge = 0.obs;
   RxInt sliderCardIndex = 0.obs;

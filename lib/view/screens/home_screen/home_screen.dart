@@ -169,7 +169,7 @@ class HomeScreen extends StatelessWidget {
             return homeController.isOverlayVisible.value
                 ? Positioned.fill(
                     child: AnimatedContainer(
-                      duration: Duration(seconds: 10),
+                      duration: const Duration(seconds: 10),
                       color: Colors.black.withOpacity(0.8),
                       child: CarouselSlider(
                           items: profileController.subscriptionList,
@@ -194,7 +194,7 @@ class HomeScreen extends StatelessWidget {
                           )),
                     ),
                   )
-                : SizedBox();
+                : const SizedBox();
           }),
         ],
       ),

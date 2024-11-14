@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -10,8 +12,12 @@ import 'package:memorial/utils/text_style.dart';
 import 'package:memorial/view/widgets/custom_appbar.dart';
 import 'package:memorial/view/widgets/custom_body_btn.dart';
 
+import '../../../helper/image_picker_helper.dart';
+
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+  ProfileScreen({super.key});
+
+  final ImagePicController imagePicker = Get.find<ImagePicController>();
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +38,22 @@ class ProfileScreen extends StatelessWidget {
                 height: 10.h,
               ),
               //==============================================profile image
-              SvgPicture.asset(AppImage.profileLogo),
+              Obx(() {
+                return imagePicker.imagePath!.value.isNotEmpty
+                    ? Container(
+                        height: 87.h,
+                        width: 87.w,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: const BoxDecoration(shape: BoxShape.circle),
+                        child: Image.file(
+                          File(imagePicker.imagePath!.value),
+                          height: 87.h,
+                          width: 87.w,
+                          fit: BoxFit.cover,
+                        ),
+                      )
+                    : SvgPicture.asset(AppImage.profileLogo);
+              }),
               //==============================================profile name and email
               Text(
                 "Topu Roy",
@@ -48,7 +69,7 @@ class ProfileScreen extends StatelessWidget {
               //=======================================================profile settings
               Container(
                 width: 342.w,
-                height: 365.h,
+                height: Get.height / 2,
                 padding: EdgeInsets.all(15.h),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(16.r),
@@ -59,7 +80,7 @@ class ProfileScreen extends StatelessWidget {
                     profileItem(
                       iconData: AppImage.editProfile,
                       title: AppString.editProfile,
-                      ontap: () {},
+                      ontap: () => Get.toNamed(AppRoute.editProfileScreen),
                     ),
                     //=================================my stories
                     profileItem(
@@ -102,7 +123,7 @@ class ProfileScreen extends StatelessWidget {
               ),
 
               SizedBox(
-                height: 20.h,
+                height: 40.h,
               ),
               //===============================================================log out button
               CustomBodyBtn(

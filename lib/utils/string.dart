@@ -82,6 +82,11 @@ With that, they turned and walked back, comforted by the thought that Grandpa Jo
   static const youDontHavePackage = "You don't have any chosen package";
   static const profile = "Profile";
   static const editProfile = "Edit Profile";
+  static const name = "Name";
+  static const editEmail = "Email";
+  static const phone = "Phone";
+  static const country = "Country";
+  static const address = "Address";
   //======================================================================settings
   static const deleteAccount = "Delete Account";
   static const changePass = "Change Password";

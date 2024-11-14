@@ -34,8 +34,8 @@ class NotificationScreen extends StatelessWidget {
                   return SlideTransition(position: slide, child: child);
                 },
                 child: homeController.isfirstIndex.value == true
-                    ? firstSixMonth(key: ValueKey('first'))
-                    : lastSixMonth(key: ValueKey('last')),
+                    ? firstSixMonth(key: const ValueKey('first'))
+                    : lastSixMonth(key: const ValueKey('last')),
               );
             }),
             const SizedBox(height: 20),

@@ -19,7 +19,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
   List<IconData> iconList = [Icons.home, Icons.person];
 
   int currentIndex = 0;
-  List pages = [HomeScreen(), const ProfileScreen()];
+  List pages = [HomeScreen(), ProfileScreen()];
 
   final HomeController homeController = Get.find<HomeController>();
   @override

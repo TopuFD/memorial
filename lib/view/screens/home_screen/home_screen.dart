@@ -1,8 +1,10 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:memorial/controller/home_controller/home_controller.dart';
+import 'package:memorial/controller/profile_controller/profile_controller.dart';
 import 'package:memorial/core/app_route.dart';
 import 'package:memorial/utils/color.dart';
 import 'package:memorial/utils/image.dart';
@@ -15,6 +17,7 @@ class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 
   final HomeController homeController = Get.find<HomeController>();
+  final ProfileController profileController = Get.find<ProfileController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,137 +28,175 @@ class HomeScreen extends StatelessWidget {
         surfaceTintColor: Colors.transparent,
         backgroundColor: AppColor.skyColor,
         actions: [
-          SvgPicture.asset(AppImage.notification),
+          InkWell(
+              onTap: () => Get.toNamed(AppRoute.notificationScreen),
+              child: SvgPicture.asset(AppImage.notification)),
           SizedBox(
             width: 20.w,
           )
         ],
       ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: Get.width * .05),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(
-                height: 10.h,
-              ),
-              //====================================================================user profile image
-              Row(
+      body: Stack(
+        children: [
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: Get.width * .05),
+            child: SingleChildScrollView(
+              child: Column(
                 children: [
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  //====================================================================user profile image
+                  Row(
+                    children: [
+                      Container(
+                        height: 60.h,
+                        width: 60.w,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                        ),
+                        child: CustomNetworkImage(
+                          imageUrl:
+                              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF6YcyD5m5o7C_mj8M71hGT6k-J-7-D79-lw&s",
+                          height: 60.h,
+                          width: 60.w,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 8.w,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "WelCome!",
+                            style: CustomTextStyle.h1(fontSize: 18.sp),
+                          ),
+                          Text(
+                            "Motashin Billah",
+                            style: CustomTextStyle.h1(
+                                color: AppColor.black, fontSize: 20.sp),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  //=======================================================================================search bar
                   Container(
-                    height: 60.h,
-                    width: 60.w,
-                    clipBehavior: Clip.antiAlias,
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                    ),
-                    child: CustomNetworkImage(
-                      imageUrl:
-                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF6YcyD5m5o7C_mj8M71hGT6k-J-7-D79-lw&s",
-                      height: 60.h,
-                      width: 60.w,
+                    width: 361.w,
+                    height: 56.h,
+                    decoration: BoxDecoration(
+                        color: AppColor.skyColor,
+                        borderRadius: BorderRadius.circular(14.r),
+                        boxShadow: const [
+                          BoxShadow(
+                              color: AppColor.white10,
+                              blurRadius: 2.2,
+                              spreadRadius: 2.2)
+                        ]),
+                    child: TextFormField(
+                      controller: homeController.searchController.value,
+                      decoration: const InputDecoration(
+                          border: InputBorder.none, hintText: "Search"),
                     ),
                   ),
                   SizedBox(
-                    width: 8.w,
+                    height: 20.h,
                   ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "WelCome!",
-                        style: CustomTextStyle.h1(fontSize: 18.sp),
-                      ),
-                      Text(
-                        "Motashin Billah",
-                        style: CustomTextStyle.h1(
-                            color: AppColor.black, fontSize: 20.sp),
-                      )
-                    ],
-                  )
+                  //============================================================================================catagory
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        customCatagory(
+                          title: "All",
+                          index: 0,
+                          weight: 100.w,
+                          ontap: () {
+                            homeController.catagoryIndex.value = 0;
+                          },
+                        ),
+                        customCatagory(
+                          title: "Loved Ones",
+                          index: 1,
+                          weight: 100.w,
+                          ontap: () {
+                            homeController.catagoryIndex.value = 1;
+                          },
+                        ),
+                        customCatagory(
+                          title: "Veterans Memorial Moments",
+                          index: 2,
+                          weight: 148.w,
+                          ontap: () {
+                            homeController.catagoryIndex.value = 2;
+                          },
+                        ),
+                        customCatagory(
+                          title: "Pets Memorial Moments",
+                          index: 3,
+                          weight: 148.w,
+                          ontap: () {
+                            homeController.catagoryIndex.value = 3;
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 30.h,
+                  ),
+                  //===========================================================================================story card
+                  ListView.builder(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: 2,
+                      itemBuilder: (context, index) {
+                        return StoryCard(
+                          ontap: () => Get.toNamed(AppRoute.storyDetailsScreen),
+                        );
+                      })
                 ],
               ),
-              SizedBox(
-                height: 20.h,
-              ),
-              //======================================================================search bar
-              Container(
-                width: 361.w,
-                height: 56.h,
-                decoration: BoxDecoration(
-                    color: AppColor.skyColor,
-                    borderRadius: BorderRadius.circular(14.r),
-                    boxShadow: const [
-                      BoxShadow(
-                          color: AppColor.white10,
-                          blurRadius: 2.2,
-                          spreadRadius: 2.2)
-                    ]),
-                child: TextFormField(
-                  controller: homeController.searchController.value,
-                  decoration: const InputDecoration(
-                      border: InputBorder.none, hintText: "Search"),
-                ),
-              ),
-              SizedBox(
-                height: 20.h,
-              ),
-              //================================================================catagory
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    customCatagory(
-                      title: "All",
-                      index: 0,
-                      weight: 100.w,
-                      ontap: () {
-                        homeController.catagoryIndex.value = 0;
-                      },
-                    ),
-                    customCatagory(
-                      title: "Loved Ones",
-                      index: 1,
-                      weight: 100.w,
-                      ontap: () {
-                        homeController.catagoryIndex.value = 1;
-                      },
-                    ),
-                    customCatagory(
-                      title: "Veterans Memorial Moments",
-                      index: 2,
-                      weight: 148.w,
-                      ontap: () {
-                        homeController.catagoryIndex.value = 2;
-                      },
-                    ),
-                    customCatagory(
-                      title: "Pets Memorial Moments",
-                      index: 3,
-                      weight: 148.w,
-                      ontap: () {
-                        homeController.catagoryIndex.value = 3;
-                      },
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 30.h,
-              ),
-              //========================================================story card
-              ListView.builder(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: 2,
-                  itemBuilder: (context, index) {
-                    return StoryCard(
-                      ontap: () => Get.toNamed(AppRoute.storyDetailsScreen),
-                    );
-                  })
-            ],
+            ),
           ),
-        ),
+          //=============================================================================================overlay positioned
+          Obx(() {
+            return homeController.isOverlayVisible.value
+                ? Positioned.fill(
+                    child: AnimatedContainer(
+                      duration: Duration(seconds: 10),
+                      color: Colors.black.withOpacity(0.8),
+                      child: CarouselSlider(
+                          items: profileController.subscriptionList,
+                          options: CarouselOptions(
+                            height: 450.h,
+                            aspectRatio: 16 / 10,
+                            viewportFraction: 0.8,
+                            initialPage: 0,
+                            enableInfiniteScroll: true,
+                            reverse: false,
+                            autoPlay: false,
+                            autoPlayInterval: const Duration(seconds: 3),
+                            autoPlayAnimationDuration:
+                                const Duration(milliseconds: 2000),
+                            autoPlayCurve: Curves.fastOutSlowIn,
+                            enlargeCenterPage: false,
+                            onPageChanged: (index, reson) {
+                              profileController.sliderCardIndex.value = index;
+                            },
+                            enlargeFactor: 0.3,
+                            scrollDirection: Axis.horizontal,
+                          )),
+                    ),
+                  )
+                : SizedBox();
+          }),
+        ],
       ),
     );
   }

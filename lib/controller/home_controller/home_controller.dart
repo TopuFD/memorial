@@ -6,4 +6,8 @@ class HomeController extends GetxController {
   Rx<TextEditingController> comentController = TextEditingController().obs;
   RxList commentList = [].obs;
   RxInt catagoryIndex = 0.obs;
+
+  RxBool isOverlayVisible = false.obs;
+  //============================================================notification
+  RxBool isfirstIndex = true.obs;
 }

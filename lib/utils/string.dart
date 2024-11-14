@@ -65,7 +65,7 @@ They stood there for a long moment, the weight of their loss hanging in the air.
 With that, they turned and walked back, comforted by the thought that Grandpa Joe’s memory would always be a part of them.""";
 
 //===================================================================drawer
-  static const myStory = "My Story";
+  static const myStory = "My Stories";
   static const savedStories = "Saved Stories";
   static const tutorialForApp = "Tutorial for using App";
   static const subscriptions = "Subscriptions";
@@ -80,10 +80,13 @@ With that, they turned and walked back, comforted by the thought that Grandpa Jo
   static const deletStoryTitle = "Do you want to delete your account?";
   static const deleteAccountTitle = "Do you want to delete your account?";
   static const youDontHavePackage = "You don't have any chosen package";
+  static const profile = "Profile";
+  static const editProfile = "Edit Profile";
   //======================================================================settings
   static const deleteAccount = "Delete Account";
   static const changePass = "Change Password";
   static const currentPass = "Current Password";
   static const confirmPass = "Confirm Password";
   static const submit = "Submit";
+  static const notification = "Notification";
 }

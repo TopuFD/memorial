@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:memorial/view/screens/notification_screen/notification_screen.dart';
+import 'package:memorial/view/screens/profile_screen/edit_profile_screen.dart';
 import 'package:memorial/view/screens/settings_screen/change_pass_screen.dart';
 import 'package:memorial/view/screens/auth_screen/auth_screen.dart';
 import 'package:memorial/view/screens/auth_screen/forget_pass/forgot_otp_screen.dart';
@@ -48,9 +50,11 @@ class AppRoute {
   static const termsConditionScreen = "/termsConditionScreen";
   static const supportScreen = "/supportScreen";
   static const subscriptionScreen = "/subscriptionScreen";
+  static const editProfileScreen = "/editProfileScreen";
   //===================================================settings screen
   static const settingScreen = "/settingScreen";
   static const changePassScreen = "/changePassScreen";
+  static const notificationScreen = "/notificationScreen";
 
   static List<GetPage> pages = [
     GetPage(
@@ -170,6 +174,18 @@ class AppRoute {
     GetPage(
         name: changePassScreen,
         page: () => ChangePassScreen(),
+        transition: Transition.rightToLeftWithFade,
+        transitionDuration: const Duration(milliseconds: 350),
+        curve: Curves.ease),
+    GetPage(
+        name: notificationScreen,
+        page: () => NotificationScreen(),
+        transition: Transition.rightToLeftWithFade,
+        transitionDuration: const Duration(milliseconds: 350),
+        curve: Curves.ease),
+    GetPage(
+        name: editProfileScreen,
+        page: () => EditProfileScreen(),
         transition: Transition.rightToLeftWithFade,
         transitionDuration: const Duration(milliseconds: 350),
         curve: Curves.ease),

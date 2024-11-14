@@ -6,8 +6,9 @@ import 'package:memorial/utils/text_style.dart';
 
 // ignore: must_be_immutable
 class CustomAppbar extends StatelessWidget {
-  CustomAppbar({super.key, this.title});
+  CustomAppbar({super.key, this.title, this.isBack = true});
   String? title;
+  bool isBack;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -27,15 +28,17 @@ class CustomAppbar extends StatelessWidget {
             : AppBar(
                 surfaceTintColor: Colors.transparent,
                 backgroundColor: AppColor.skyColor,
-                leading: IconButton(
-                    onPressed: () {
-                      Get.back();
-                    },
-                    icon: Icon(
-                      Icons.arrow_back,
-                      size: 25.h,
-                      color: AppColor.black,
-                    )),
+                leading: isBack == true
+                    ? IconButton(
+                        onPressed: () {
+                          Get.back();
+                        },
+                        icon: Icon(
+                          Icons.arrow_back,
+                          size: 25.h,
+                          color: AppColor.black,
+                        ))
+                    : const SizedBox(),
                 centerTitle: true,
                 title: Text(
                   title!,

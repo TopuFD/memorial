@@ -72,17 +72,17 @@ class _StoryCardState extends State<StoryCard> {
                       enableInfiniteScroll: true,
                       reverse: false,
                       autoPlay: true,
-                      autoPlayInterval: const Duration(seconds: 3),
-                      autoPlayAnimationDuration:
-                          const Duration(milliseconds: 2000),
-                      autoPlayCurve: Curves.fastOutSlowIn,
+                      pauseAutoPlayInFiniteScroll: true,
+                      autoPlayInterval: const Duration(seconds: 4),
+                      autoPlayAnimationDuration: const Duration(seconds: 3),
+                      autoPlayCurve: Curves.decelerate,
                       enlargeCenterPage: true,
                       onPageChanged: (index, reson) {
                         setState(() {
                           currentIndex = index;
                         });
                       },
-                      enlargeFactor: 0.3,
+                      enlargeFactor: 0.5,
                       scrollDirection: Axis.horizontal,
                     )),
                 Positioned(
@@ -189,7 +189,8 @@ class _StoryCardState extends State<StoryCard> {
   customIndicator({int? index}) {
     return Padding(
       padding: const EdgeInsets.only(right: 5),
-      child: Container(
+      child: AnimatedContainer(
+        duration: Duration(milliseconds: 300),
         height: 14.h,
         width: 14.w,
         decoration: BoxDecoration(

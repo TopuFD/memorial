@@ -30,4 +30,6 @@ class AppImage {
   static const messege = "assets/svg/messege.svg";
   static const select = "assets/svg/select.svg";
   static const delete = "assets/svg/delete.svg";
+  static const profileLogo = "assets/svg/profileLogo.svg";
+  static const editProfile = "assets/svg/editProfile.svg";
 }

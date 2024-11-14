@@ -1,9 +1,12 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:memorial/utils/color.dart';
-import 'package:memorial/view/profile_screen/profile_screen.dart';
 import 'package:memorial/view/screens/home_screen/home_screen.dart';
+import 'package:memorial/view/screens/profile_screen/profile_screen.dart';
+
+import '../../../controller/home_controller/home_controller.dart';
 
 class BottomNavScreen extends StatefulWidget {
   const BottomNavScreen({super.key});
@@ -18,6 +21,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
   int currentIndex = 0;
   List pages = [HomeScreen(), const ProfileScreen()];
 
+  final HomeController homeController = Get.find<HomeController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,19 +29,24 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
       extendBody: true,
       resizeToAvoidBottomInset: true,
       body: pages[currentIndex],
-      floatingActionButton: Container(
-        height: 50.h,
-        width: 50.w,
-        decoration:
-            const BoxDecoration(color: Colors.blue, shape: BoxShape.circle),
-        child: Center(
+      floatingActionButton: NeumorphicButton(
+          onPressed: () {
+            homeController.isOverlayVisible.toggle();
+          },
+          style: const NeumorphicStyle(
+            shape: NeumorphicShape.convex,
+            depth: 2,
+            intensity: 2,
+            color: AppColor.blueColor,
+            shadowDarkColor: Colors.white,
+            shadowLightColor: AppColor.white,
+            boxShape: NeumorphicBoxShape.circle(),
+          ),
           child: Icon(
             Icons.add,
-            size: 35.h,
             color: AppColor.white,
-          ),
-        ),
-      ),
+            size: 40.h,
+          )),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: SizedBox(
         height: 90.h,

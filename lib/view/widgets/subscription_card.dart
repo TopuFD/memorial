@@ -2,14 +2,15 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:memorial/controller/profile_controller/profile_controller.dart';
+import 'package:memorial/controller/home_controller/home_controller.dart';
+import 'package:memorial/core/app_route.dart';
 import 'package:memorial/utils/color.dart';
 import 'package:memorial/utils/image.dart';
 import 'package:memorial/utils/text_style.dart';
 import 'package:memorial/view/widgets/custom_body_btn.dart';
 
 class SubscriptionCard extends StatelessWidget {
-  const SubscriptionCard(
+  SubscriptionCard(
       {super.key,
       required this.cardType,
       required this.pageType,
@@ -24,6 +25,7 @@ class SubscriptionCard extends StatelessWidget {
   final int imageCount;
   final String activeTime;
 
+  final HomeController homeController = Get.find<HomeController>();
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
@@ -83,9 +85,8 @@ class SubscriptionCard extends StatelessWidget {
             CustomBodyBtn(
                 title: "Pay Now",
                 ontap: () {
-                  ProfileController.instance.mySubscriptionList.add(
-                      ProfileController.instance.subscriptionList![
-                          ProfileController.instance.sliderCardIndex.value]);
+                  Get.toNamed(AppRoute.paymentScreen);
+                  homeController.isOverlayVisible.value == false;
                 }),
           ],
         ),

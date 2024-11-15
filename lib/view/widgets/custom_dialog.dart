@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:memorial/core/app_route.dart';
 import 'package:memorial/utils/color.dart';
+import 'package:memorial/utils/image.dart';
 import 'package:memorial/utils/string.dart';
 import 'package:memorial/utils/text_style.dart';
+import 'package:memorial/view/widgets/custom_body_btn.dart';
 
 class CustomDialog {
   customDialog({
@@ -11,6 +15,7 @@ class CustomDialog {
     bool? isLogOut,
     bool? isDeletStory,
     bool? isDeletAccout,
+    bool? isSuccess,
   }) {
     showGeneralDialog(
       context: context,
@@ -42,9 +47,11 @@ class CustomDialog {
                     Text(
                       isLogOut == true
                           ? AppString.logoutDialogTitle
-                          : isDeletStory == true
-                              ? AppString.deletStoryTitle
-                              : AppString.deleteAccountTitle,
+                          : isSuccess == true
+                              ? ""
+                              : isDeletStory == true
+                                  ? AppString.deletStoryTitle
+                                  : AppString.deleteAccountTitle,
                       textAlign: TextAlign.center,
                       style: CustomTextStyle.h4(
                           fontSize: 22.sp, fontWeight: FontWeight.w500),
@@ -77,19 +84,44 @@ class CustomDialog {
                                   ),
                                 ],
                               )
-                            : Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                children: [
-                                  whiteButton(
-                                      title: "Cancel", context: context),
-                                  colorButton(
-                                    color: AppColor.blueColor,
-                                    title: "Delete",
-                                    ontap: () {},
-                                  ),
-                                ],
-                              ),
+                            : isDeletAccout == true
+                                ? Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceAround,
+                                    children: [
+                                      whiteButton(
+                                          title: "Cancel", context: context),
+                                      colorButton(
+                                        color: AppColor.blueColor,
+                                        title: "Delete",
+                                        ontap: () {},
+                                      ),
+                                    ],
+                                  )
+                                : isSuccess == true
+                                    ? Column(
+                                        children: [
+                                          SvgPicture.asset(AppImage.success),
+                                          SizedBox(
+                                            height: 12.h,
+                                          ),
+                                          Text(
+                                            AppString.paymentSuccessFull,
+                                            style: CustomTextStyle.h1(),
+                                          ),
+                                          SizedBox(
+                                            height: 12.h,
+                                          ),
+                                          CustomBodyBtn(
+                                              title: AppString.continuePay,
+                                              ontap: () {
+                                                Get.back();
+                                                Get.offNamed(AppRoute
+                                                    .subscriptionScreen);
+                                              })
+                                        ],
+                                      )
+                                    : const SizedBox(),
                   ],
                 ),
               ),

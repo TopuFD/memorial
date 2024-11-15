@@ -24,13 +24,22 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: AppColor.skyColor,
       extendBody: true,
       drawer: const CustomDrawer(),
+      onDrawerChanged: (isOpened) {
+        if (isOpened) {
+          homeController.isOverlayVisible.value = false;
+          homeController.isDrawerOpen.value = isOpened;
+        }
+      },
       appBar: AppBar(
         surfaceTintColor: Colors.transparent,
         backgroundColor: AppColor.skyColor,
         actions: [
           InkWell(
               onTap: () => Get.toNamed(AppRoute.notificationScreen),
-              child: SvgPicture.asset(AppImage.notification)),
+              child: Padding(
+                padding: EdgeInsets.only(top: 6.h),
+                child: SvgPicture.asset(AppImage.notification),
+              )),
           SizedBox(
             width: 20.w,
           )
@@ -166,7 +175,8 @@ class HomeScreen extends StatelessWidget {
           ),
           //=============================================================================================overlay positioned
           Obx(() {
-            return homeController.isOverlayVisible.value
+            return homeController.isOverlayVisible.value &&
+                    homeController.isDrawerOpen.value
                 ? Positioned.fill(
                     child: AnimatedContainer(
                       duration: const Duration(seconds: 10),
@@ -180,7 +190,7 @@ class HomeScreen extends StatelessWidget {
                             initialPage: 0,
                             enableInfiniteScroll: true,
                             reverse: false,
-                            autoPlay: false,
+                            autoPlay: true,
                             autoPlayInterval: const Duration(seconds: 3),
                             autoPlayAnimationDuration:
                                 const Duration(milliseconds: 2000),
@@ -189,7 +199,7 @@ class HomeScreen extends StatelessWidget {
                             onPageChanged: (index, reson) {
                               profileController.sliderCardIndex.value = index;
                             },
-                            enlargeFactor: 0.3,
+                            enlargeFactor: 0.2,
                             scrollDirection: Axis.horizontal,
                           )),
                     ),

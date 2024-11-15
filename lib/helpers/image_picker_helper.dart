@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:memorial/helper/toast_messege.dart';
+import 'package:memorial/helpers/toast_messege.dart';
 
 class ImagePicController extends GetxController {
   ImagePicker picker = ImagePicker();

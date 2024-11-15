@@ -12,7 +12,8 @@ import 'package:memorial/utils/text_style.dart';
 import 'package:memorial/view/widgets/custom_appbar.dart';
 import 'package:memorial/view/widgets/custom_body_btn.dart';
 
-import '../../../helper/image_picker_helper.dart';
+import '../../../helpers/image_picker_helper.dart';
+import '../../widgets/custom_dialog.dart';
 
 class ProfileScreen extends StatelessWidget {
   ProfileScreen({super.key});
@@ -129,7 +130,9 @@ class ProfileScreen extends StatelessWidget {
               CustomBodyBtn(
                 title: AppString.logOut,
                 iconData: AppImage.logOut,
-                ontap: () {},
+                ontap: () {
+                  CustomDialog().customDialog(context: context, isLogOut: true);
+                },
                 isBorder: true,
               ),
               SizedBox(

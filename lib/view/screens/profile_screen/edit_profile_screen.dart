@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:memorial/controller/profile_controller/profile_controller.dart';
-import 'package:memorial/helper/image_picker_helper.dart';
+import 'package:memorial/helpers/image_picker_helper.dart';
 import 'package:memorial/helpers/other_helper.dart';
 import 'package:memorial/view/widgets/custom_appbar.dart';
 import 'package:memorial/view/widgets/custom_body_btn.dart';

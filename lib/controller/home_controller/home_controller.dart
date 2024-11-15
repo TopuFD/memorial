@@ -8,6 +8,7 @@ class HomeController extends GetxController {
   RxInt catagoryIndex = 0.obs;
 
   RxBool isOverlayVisible = false.obs;
+  RxBool isDrawerOpen = false.obs;
   //============================================================notification
   RxBool isfirstIndex = true.obs;
 }

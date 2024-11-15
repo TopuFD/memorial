@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:memorial/view/screens/notification_screen/notification_screen.dart';
+import 'package:memorial/view/screens/payment_screen/payment_screen.dart';
 import 'package:memorial/view/screens/profile_screen/edit_profile_screen.dart';
 import 'package:memorial/view/screens/settings_screen/change_pass_screen.dart';
 import 'package:memorial/view/screens/auth_screen/auth_screen.dart';
@@ -55,6 +56,9 @@ class AppRoute {
   static const settingScreen = "/settingScreen";
   static const changePassScreen = "/changePassScreen";
   static const notificationScreen = "/notificationScreen";
+
+  //===================================================payment screen
+  static const paymentScreen = "/paymentScreen";
 
   static List<GetPage> pages = [
     GetPage(
@@ -186,6 +190,12 @@ class AppRoute {
     GetPage(
         name: editProfileScreen,
         page: () => EditProfileScreen(),
+        transition: Transition.rightToLeftWithFade,
+        transitionDuration: const Duration(milliseconds: 350),
+        curve: Curves.ease),
+    GetPage(
+        name: paymentScreen,
+        page: () => PaymentScreen(),
         transition: Transition.rightToLeftWithFade,
         transitionDuration: const Duration(milliseconds: 350),
         curve: Curves.ease),

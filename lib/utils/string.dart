@@ -94,4 +94,16 @@ With that, they turned and walked back, comforted by the thought that Grandpa Jo
   static const confirmPass = "Confirm Password";
   static const submit = "Submit";
   static const notification = "Notification";
+  //======================================================================payment
+  static const paymentScreen = "Payment Screen";
+  static const paymentAmount = "Payment Ammount";
+  static const cardName = "Card Name";
+  static const cardNumber = "Card Number";
+  static const expiration = "Expiration";
+  static const cvc = "CVC";
+  static const countryName = "Country";
+  static const paymentSuccessFull = "Payment Successfull";
+  static const continuePay = "Continue";
+  static const pay = "Pay";
+  static const dollar = "\$";
 }

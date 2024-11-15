@@ -33,4 +33,6 @@ class AppImage {
   static const profileLogo = "assets/svg/profileLogo.svg";
   static const editProfile = "assets/svg/editProfile.svg";
   static const edit = "assets/svg/edit.svg";
+  static const cvcIcon = "assets/svg/cvcIcon.svg";
+  static const success = "assets/svg/success.svg";
 }

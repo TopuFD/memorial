@@ -106,4 +106,7 @@ With that, they turned and walked back, comforted by the thought that Grandpa Jo
   static const continuePay = "Continue";
   static const pay = "Pay";
   static const dollar = "\$";
+
+  //======================================================================create story
+  static const createStory = "Create Story";
 }

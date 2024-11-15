@@ -7,4 +7,5 @@ class PaymentcController extends GetxController {
   Rx<TextEditingController> cvcNumber = TextEditingController().obs;
   Rx<TextEditingController> expiration = TextEditingController().obs;
   Rx<TextEditingController> country = TextEditingController().obs;
+  RxBool isPay = false.obs;
 }

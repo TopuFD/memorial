@@ -2,6 +2,8 @@ import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.da
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:memorial/controller/payment_controller/payment_controller.dart';
+import 'package:memorial/core/app_route.dart';
 import 'package:memorial/utils/color.dart';
 import 'package:memorial/view/screens/home_screen/home_screen.dart';
 import 'package:memorial/view/screens/profile_screen/profile_screen.dart';
@@ -22,6 +24,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
   List pages = [HomeScreen(), ProfileScreen()];
 
   final HomeController homeController = Get.find<HomeController>();
+  final PaymentcController paymentController = Get.find<PaymentcController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +34,9 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
       body: pages[currentIndex],
       floatingActionButton: NeumorphicButton(
           onPressed: () {
-            homeController.isOverlayVisible.toggle();
+            paymentController.isPay.value == true
+                ? Get.toNamed(AppRoute.createStory)
+                : homeController.isOverlayVisible.toggle();
           },
           style: const NeumorphicStyle(
             shape: NeumorphicShape.convex,
@@ -64,4 +69,6 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
       ),
     );
   }
+
+  //==================================================================================storyInformation
 }

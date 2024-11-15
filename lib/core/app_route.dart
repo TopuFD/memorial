@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:memorial/view/screens/create_story_screen/create_story_screen.dart';
 import 'package:memorial/view/screens/notification_screen/notification_screen.dart';
 import 'package:memorial/view/screens/payment_screen/payment_screen.dart';
 import 'package:memorial/view/screens/profile_screen/edit_profile_screen.dart';
@@ -59,6 +60,8 @@ class AppRoute {
 
   //===================================================payment screen
   static const paymentScreen = "/paymentScreen";
+  //===================================================create story screen
+  static const createStory = "/createStory";
 
   static List<GetPage> pages = [
     GetPage(
@@ -196,6 +199,12 @@ class AppRoute {
     GetPage(
         name: paymentScreen,
         page: () => PaymentScreen(),
+        transition: Transition.rightToLeftWithFade,
+        transitionDuration: const Duration(milliseconds: 350),
+        curve: Curves.ease),
+    GetPage(
+        name: createStory,
+        page: () => CreateStoryScreen(),
         transition: Transition.rightToLeftWithFade,
         transitionDuration: const Duration(milliseconds: 350),
         curve: Curves.ease),

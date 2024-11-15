@@ -116,6 +116,7 @@ class PaymentScreen extends StatelessWidget {
                 CustomBodyBtn(
                     title: AppString.pay,
                     ontap: () {
+                      paymentcController.isPay.value = true;
                       CustomDialog()
                           .customDialog(context: context, isSuccess: true);
                       ProfileController.instance.mySubscriptionList.add(Obx(() {

@@ -116,8 +116,8 @@ class CustomDialog {
                                               title: AppString.continuePay,
                                               ontap: () {
                                                 Get.back();
-                                                Get.offNamed(AppRoute
-                                                    .subscriptionScreen);
+                                                Get.offNamed(
+                                                    AppRoute.createStory);
                                               })
                                         ],
                                       )

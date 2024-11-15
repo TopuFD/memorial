@@ -13,11 +13,16 @@ import 'package:memorial/view/screens/home_screen/drawer_screen/custom_drawer.da
 import 'package:memorial/view/widgets/cutom_network_image.dart';
 import 'package:memorial/view/widgets/story_card.dart';
 
+import '../../../controller/payment_controller/payment_controller.dart';
+
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 
   final HomeController homeController = Get.find<HomeController>();
   final ProfileController profileController = Get.find<ProfileController>();
+  final PaymentcController paymentcController = Get.find<PaymentcController>();
+
+  final FocusNode _focusNode = FocusNode();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -96,21 +101,39 @@ class HomeScreen extends StatelessWidget {
                   ),
                   //=======================================================================================search bar
                   Container(
-                    width: 361.w,
-                    height: 56.h,
                     decoration: BoxDecoration(
-                        color: AppColor.skyColor,
-                        borderRadius: BorderRadius.circular(14.r),
-                        boxShadow: const [
-                          BoxShadow(
-                              color: AppColor.white10,
-                              blurRadius: 2.2,
-                              spreadRadius: 2.2)
-                        ]),
+                      color: Colors.transparent,
+                      borderRadius: BorderRadius.circular(30),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.black12,
+                          blurRadius: 10,
+                          spreadRadius: 1,
+                          offset: Offset(0, 0),
+                        ),
+                      ],
+                    ),
                     child: TextFormField(
+                      focusNode: _focusNode,
                       controller: homeController.searchController.value,
-                      decoration: const InputDecoration(
-                          border: InputBorder.none, hintText: "Search"),
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Colors.lightBlue[100],
+                        hintText: 'Search',
+                        hintStyle: TextStyle(color: Colors.grey[700]),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30),
+                          borderSide: BorderSide.none,
+                        ),
+                        contentPadding:
+                            EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                        suffixIcon: GestureDetector(
+                          onTap: () {
+                            FocusScope.of(context).unfocus(); // Close keyboard
+                          },
+                          child: Icon(Icons.search, color: Colors.grey[700]),
+                        ),
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -175,8 +198,9 @@ class HomeScreen extends StatelessWidget {
           ),
           //=============================================================================================overlay positioned
           Obx(() {
-            return homeController.isOverlayVisible.value &&
-                    homeController.isDrawerOpen.value
+            return homeController.isOverlayVisible.value == true &&
+                    homeController.isDrawerOpen.value == false &&
+                    paymentcController.isPay.value == false
                 ? Positioned.fill(
                     child: AnimatedContainer(
                       duration: const Duration(seconds: 10),
